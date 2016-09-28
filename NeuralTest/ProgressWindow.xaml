@@ -1,0 +1,19 @@
+﻿<Window x:Class="NeuralTest.ProgressWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ProgressWindow" Height="100" Width="300">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <ProgressBar Foreground="CadetBlue" Margin="4,10,4,10" Height="10" IsIndeterminate="true"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="error" Style="{StaticResource TitleTextBlockStyle}"/>
+            <TextBox Grid.Column="1" Name="Error" IsEnabled="False" Style="{StaticResource TextBoxStyle}"/>
+            </Grid>
+        </StackPanel>
+       
+    </Grid>
+</Window>
