@@ -401,11 +401,12 @@ namespace NeuralTest.ViewModel
             // number of learning samples
 
             //int samples = DataList.Count(); 
-            int samples = 5000;
+           
 
             // prepare learning data
             int numberOfRecords;
             int.TryParse(NumberOfRecords, out numberOfRecords);
+            int samples = numberOfRecords;
 
             var data = DataList.ToArray();
             // input, outpu arrays
@@ -611,9 +612,9 @@ namespace NeuralTest.ViewModel
                 var x = double.Parse(t[t.Count() - 2].Replace(".", ","));
                 var y = double.Parse(t[t.Count() - 1].Replace(".", ","));
                 var category = t[1];
-                if (category == "LARCENY/THEFT" || category == "OTHER OFFENSES"
-                    || category == "ASSAULT" || category == "NON-CRIMINAL")
-                    continue;
+                //if (category == "LARCENY/THEFT" || category == "OTHER OFFENSES"
+                //    || category == "ASSAULT" || category == "NON-CRIMINAL")
+                //    continue;
                 trainingModels.Add(new TrainingModel(date,x,y,category));
             }
             var a = NormalizeXy(trainingModels);
